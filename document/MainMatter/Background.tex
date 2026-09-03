@@ -1,0 +1,466 @@
+\chapter{Preliminares}\label{chapter:state-of-the-art}
+
+En este capítulo se exponen los pilares teóricos y conceptuales necesarios para la comprensión de la presente investigación. Se describen las bases biológicas de la respuesta inmunitaria frente a la vacunación, incluyendo los ensayos de cuantificación de anticuerpos (ELISA y OPA) y los factores asociados al envejecimiento, como la inmunosenescencia. Más adelante, se introduce la metodología del inmunopuente y los correlatos de protección como estrategias para inferir la efectividad vacunal. Se formalizan los conceptos estadísticos elementales utilizados en el análisis de inmunogenicidad, como la media geométrica y la razón de medias geométricas. Por último, se aborda la censura en datos de laboratorio y los métodos estadísticos para tratarla, así como el criterio de no inferioridad utilizado en los estudios de inmunopuente.
+
+\section{Sistema inmunitario}
+
+El sistema inmunitario está constituido por el conjunto coordinado de células y moléculas cuya función fisiológica principal es la defensa del organismo frente a microorganismos infecciosos y sustancias extrañas \cite{abbas2015}. A la respuesta conjunta y organizada de estos elementos ante la presencia de un antígeno se le denomina respuesta inmunitaria.
+
+Si bien opera de manera integrada, funcionalmente se divide en dos componentes interdependientes: el sistema inmunitario innato y el sistema inmunitario adaptativo (o adquirido).
+
+\vspace{\baselineskip}
+\textbf{Sistema inmune innato}
+\vspace{\baselineskip}
+
+El sistema inmune innato es la primera línea de defensa frente a la infección. Su función principal es la de generar una respuesta defensiva inmediata frente a la infección. Sin embargo es un mecanismo de defensa inespecífico; por lo que, aunque reconoce y responde a los patógenos, lo hace de forma genérica y su respuesta no mejora con la exposición repetida a una infección determinada \cite{aep2026}.
+
+Su componente celular lo conforman las células fagocíticas, cuya función asignada es la endocitosis y la digestión de microorganismos, para su posterior presentación a las células del sistema inmunitario adquirido (actúan como células presentadoras de antígeno). Por otro parte, su componente humoral está formado por un conjunto de proteínas denominadas sistema de complemento, un sistema de respuesta rápida y muy amplificada frente a un estímulo desencadenante, mediado por un fenómeno de activación secuencial \cite{aep2026}.
+
+Aunque el sistema innato intenta combatir todas las infecciones de forma inmediata, los patógenos han desarrollado estrategias para evadir este encuentro. Luego, el organismo necesita diseñar mecanismos de defensa dirigidos individualmente contra cada uno de los patógenos y estos son los mecanismos del sistema inmunitario adquirido.
+
+\vspace{\baselineskip}
+\textbf{Sistema inmune adquirido}
+\vspace{\baselineskip}
+
+El sistema inmune adquirido conforma la segunda línea de defensa de nuestro organismo y a diferencia del innato, es altamente específico, capaz de reconocer miles de millones de antígenos diferentes y responder a cada uno de ellos de forma individual. Puede llegar a necesitar varios días para su completa activación.
+
+Uno de sus aspectos más relevantes es que tiene “memoria”, es decir, recuerda el contacto previo con el antígeno para que, en un segundo encuentro, pueda responder de forma mejor y con mayor rapidez al patógeno.
+
+El componente celular del sistema inmune adquirido lo constituye todo un ejército de células altamente especializadas, denominadas linfocitos, con funciones perfectamente definidas en la respuesta frente a los patógenos.
+
+Por otro lado, el componente humoral está representado por los linfocitos B; estos se transforman en células plasmáticas que producen unas glucoproteínas denominadas anticuerpos o inmunoglobulinas (AC o Ig), las cuales se van a unir a antígenos específicos que reconocen de forma unívoca. Existen hasta cinco clases de anticuerpos, denominados isotipos (IgG, IgA, IgM, IgD e IgE), con estructuras y funciones diferentes. El isotipo IgG es el que proporciona mayor nivel de protección inmunitaria frente a los patógenos invasores \cite{aep2026}.
+
+\subsection{Anticuerpos y mediciones}
+
+En el contexto de patógenos con múltiples variantes, como el Streptococcus pneumoniae, es crucial considerar los serotipos. Un serotipo es una clasificación de microorganismos basada en sus antígenos de superficie; por tanto, la eficacia de una vacuna depende de su capacidad para generar anticuerpos específicos que reconozcan y reaccionen ante los serotipos particulares que circulan en una población \cite{nauta2020}.
+
+Los niveles de anticuerpos en muestras de suero se cuantifican mediante dos métricas principales: los títulos de anticuerpos o las concentraciones de anticuerpos.
+
+\vspace{\baselineskip}
+\textbf{Título de anticuerpos}
+\vspace{\baselineskip}
+
+Un título de anticuerpos es una medida de la cantidad de anticuerpos en una muestra de suero, expresada como el recíproco de la dilución más alta de la muestra que aún produce (o deja de producir) un resultado específico en un ensayo. Para determinar el título, una muestra de suero se diluye en serie, donde el factor de dilución es el cociente entre el volumen final y el volumen inicial. Normalmente, este factor es constante en cada paso \cite{nauta2020}.
+
+A cada dilución se añade una cantidad estándar de antígeno y se realiza un ensayo que genera una lectura específica ante la detección de anticuerpos. Cuanto mayor sea la carga de anticuerpos en la muestra original, mayor será la dilución a la que el ensayo aún arroje una lectura positiva. Por definición, los títulos de anticuerpos no tienen unidades \cite{nauta2020}.
+
+\vspace{\baselineskip}
+\textbf{Concentraciones de anticuerpos}
+\vspace{\baselineskip}
+
+Las concentraciones de anticuerpos miden la cantidad de proteína específica por mililitro de suero, expresada como microgramos por mililitro (µg/ml) o unidades por mililitro (U/ml). A diferencia de los títulos, esta medición suele realizarse sobre una única muestra de suero y no sobre una serie de diluciones \cite{nauta2020}.
+
+Uno de los ensayos estándar para determinar los niveles de anticuerpos en suero es el Ensayo Inmunoabsorbente Ligado a Enzimas (ELISA o EIA, por sus siglas en inglés).
+
+\vspace{\baselineskip}
+\textbf{ELISA}
+\vspace{\baselineskip}
+
+El principio básico de ELISA consiste en fijar una cantidad definida de antígeno a una superficie sólida. Luego, se añade la muestra de suero; si esta contiene anticuerpos específicos se unirán al antígeno fijado. A continuación, tras un proceso de lavado para eliminar los anticuerpos no unidos, se añade un anticuerpo secundario contra inmunoglobulinas humanas el cual está unido químicamente a una enzima. Finalmente, se añade un sustrato que la enzima puede dividir, produciendo un señal detectable (color, fluorescencia, etc.).
+La intensidad de la señal es proporcional a la cantidad de anticuerpo presente en la muestra \cite{nauta2020}.
+
+Además del ELISA, que cuantifica la concentración de anticuerpos, existen ensayos funcionales como el Ensayo Opsonofagocítico (OPA, por sus siglas en inglés).
+
+\vspace{\baselineskip}
+\textbf{Ensayo Opsonofagocítico}
+\vspace{\baselineskip}
+
+El Ensayo Opsonofagocítico (OPA) es un método analítico funcional diseñado para cuantificar la capacidad biológica de los anticuerpos para promover la eliminación de patógenos mediante la interacción sinérgica con el sistema del complemento y células efectoras fagocíticas. A diferencia de las técnicas de unión física como el ELISA, el OPA mimetiza la respuesta inmunitaria efectora in vitro al evaluar la competencia de las inmunoglobulinas para  \enquote{marcar} al microorganismo (opsonización) y facilitar su posterior ingestión y destrucción celular. Los resultados de esta técnica se expresan como títulos opsonofagocíticos, definidos formalmente como el recíproco de la dilución de suero más alta capaz de inducir la muerte de al menos el 50\% de la carga microbiana en el ensayo \cite{romerosteiner1997}. Por tanto, esta métrica representa un indicador crítico de la eficacia biológica y la calidad de la respuesta inmune, más allá de la simple concentración de anticuerpos presentes en la muestra.
+
+\section{Vacunación}
+
+La vacunación es una estrategia de salud pública que consiste en exponer al sistema inmunitario a antígenos para estimular la respuesta adquirida y generar células de memoria. Su objetivo es producir un estímulo que simule la infección natural, logrando una respuesta específica y duradera que proteja al individuo en futuras exposiciones \cite{aep2026}.
+
+Los primeros ensayos de vacuna antineumocócica, a principios del siglo XX, utilizaron bacterias completas inactivadas sin conocer la diversidad de serotipos. El descubrimiento de la cápsula de polisacárido como antígeno clave llevó, en las décadas de 1970 y 1980, a las vacunas de polisacáridos (PPV23), efectivas en adultos pero inmunogénicamente inertes en lactantes. La revolución tecnológica llegó con la conjugación química del polisacárido a una proteína transportadora, dando lugar a las vacunas conjugadas (PCV7 en 2000, seguidas de PCV10, PCV13, PCV15 y PCV20), capaces de generar memoria inmunológica y protección en niños menores de dos años. Este continuo desarrollo ha permitido reducir drásticamente la enfermedad invasiva, aunque ha revelado nuevos desafíos como el reemplazo de serotipos, lo que mantiene activa la búsqueda de vacunas independientes de serotipo basadas en antígenos comunes o tecnologías de ARNm \cite{Feldman2022}.
+
+Cuando un porcentaje importante de una población se vacuna, este efecto protector beneficia también a personas no vacunadas, generando lo que se denomina “protección de grupo”. La respuesta inmunológica a la vacunación depende del tipo y la dosis de antígeno, el efecto de los adyuvantes y los factores del huésped relacionados con la edad, los anticuerpos preexistentes, la nutrición, la enfermedad concurrente o la genética del mismo \cite{aep2026}.
+
+Una de las propiedades más importantes de las vacunas, además de su estabilidad y seguridad es la inmunogenicidad, es decir, su capacidad de generar una respuesta inmunitaria protectora con la mayor duración posible frente al antígeno vacunal \cite{aep2026}.
+
+Para poder decidir si aplicar o no una determinada intervención, es fundamental establecer una jerarquización de la evidencia científica disponible, siendo el ensayo clínico aleatorizado (ECA) el paradigma de dicha evidencia. El ensayo clínico se define como un estudio experimental, de carácter prospectivo y controlado, donde el investigador regula las variables del estudio para determinar o confirmar los efectos clínicos, farmacológicos y de seguridad de un medicamento en investigación \cite{aep2026}.
+
+En este diseño, los sujetos participantes son asignados de forma aleatoria a las distintas intervenciones. Esto permite comparar si una nueva vacuna es mejor frente a un grupo control (que puede recibir una vacuna antigua o placebo) al ser seguidos de forma concurrente. La aleatorización favorece que los grupos sean similares en todo excepto en la intervención, por lo que constituye la mejor prueba científica para apoyar la evidencia de eficacia al presentar el menor número de errores sistemáticos o sesgos \cite{aep2026}.
+
+Considerado el \enquote{estándar de oro} de la investigación en vacunas, el desarrollo clínico de una vacuna candidata generalmente se somete a diversas fases que progresan de forma secuencial \cite{aep2026}:
+
+\begin{itemize}
+	\item Fase I: Tiene como objetivo principal evaluar la seguridad y la reactogenicidad del fármaco, siendo un objetivo secundario la evaluación de la respuesta inmune. En esta fase también se suele evaluar de manera inicial la dosis, la pauta de vacunación y el modo de administración de la vacuna. Se realiza en poblaciones de pequeño tamaño (20 - 80 voluntarios aproximadamente). En esta fase de desarrollo algunos ensayos pueden ser abiertos y no aleatorizados, en función del objetivo principal de seguridad que se busque.
+	
+	\item Fase II: En esta fase el número de participantes es mucho mayor que en la fase I, pasándose de un entorno clínico controlado a una primera evaluación de campo (100-400 aproximadamente). Consiste sobre todo en la estimación de la dosis óptima de vacuna y la pauta vacunal óptima. Por regla general, el control utilizado en estos estudios es un placebo que permite estimar mejor la tasa de reacciones adversas detectadas. Se evalúa el impacto de múltiples variables en la respuesta inmune, como la edad, raza, género, presencia de anticuerpos preexistentes, etcétera, y tienen en consideración tanto la edad de administración de la vacuna, como el número y el intervalo entre dosis.
+	
+	\item Fase III: Esta fase es esencial para el registro, aprobación y comercialización de una vacuna. El objetivo principal de un ensayo de fase III es demostrar o confirmar el beneficio terapéutico, la evidencia previa recopilada durante las fases previas, es decir, que la vacuna es segura y eficaz para su uso en la indicación y población específica. La muestra es heterogénea y representativa (miles de sujetos). Se pueden evaluar: la eficacia de la vacuna en función de la susceptibilidad, colonización, progresión y patogenicidad e infecciosidad de la enfermedad, efectos indirectos de la vacunación en los no vacunados y efectos generales a nivel de la población.
+	
+	\item Fase IV (Farmacovigilancia): Constituye la ampliación de conocimiento sobre la eficacia de la vacuna una vez obtenida la aprobación para la comercialización y comienza a aplicarse de forma sistemática en la población. Además de las reacciones adversas que pudieran ocurrir con su uso y que no hubieran sido detectadas en las fases anteriores, se evalúa también la efectividad a través de la vigilancia epidemiológica continuada.
+	
+\end{itemize}
+
+Las fases anteriormente descritas suelen transcurrir de forma consecutiva, aunque en ocasiones pueden superponerse entre sí, comenzando una fase posterior sin haber terminado las previas.
+
+Respecto al beneficio de las vacunas en la prevención de enfermedades, se deben conocer los siguientes conceptos:
+
+\begin{itemize}
+	\item Eficacia: beneficio que produce la intervención en la población que recibe las vacunas, en condiciones ideales controladas. Se obtiene mediante la realización de ensayos clínicos, una vez demostrado el objetivo de eficacia definido en el ensayo, para solicitar la aprobación de la vacuna a las agencias reguladoras. Cuando no es posible medir la eficacia, por ejemplo, en enfermedades de baja incidencia, se utiliza un parámetro subrogado de protección (título de anticuerpos que puede ser considerado como predictivo de protección tras la vacunación) y se habla en términos de inmunogenicidad \cite{aep2026}.
+	
+	\item Efectividad: Se entiende por efectividad los resultados o beneficios de salud obtenidos tras un programa de vacunación en la población diana en condiciones reales o habituales de la práctica asistencial. En algunas ocasiones, la efectividad puede ser mayor que la eficacia vacunal por el efecto indirecto añadido de “protección de grupo”, una vez aplicada a la población \cite{aep2026}.
+	
+\end{itemize}
+
+La determinación de la eficacia y efectividad clínica mediante el seguimiento de grandes cohortes de individuos resulta, en muchos escenarios, costosa o éticamente compleja, especialmente cuando ya existen vacunas autorizadas para esa enfermedad. Es aquí donde los correlatos de protección desempeñan un papel fundamental.
+
+\vspace{\baselineskip}
+\textbf{Correlatos de protección}
+\vspace{\baselineskip}
+
+Los correlatos de protección (CoP) son de gran importancia porque pueden utilizarse como criterios sustitutos de la eficacia vacunal en ensayos clínicos de vacunas. Constituyen la base científica para mejorar vacunas existentes e introducir nuevas. Bajo ciertas condiciones, pueden utilizarse para predecir la eficacia vacunal en poblaciones distintas de aquella en la que se demostró la eficacia \cite{nauta2020}.
+
+En la literatura científica, el término correlato de protección se utiliza con dos significados distintos: como un marcador inmunitario que predice protección contra infección o enfermedad y como un valor específico de un ensayo inmunológico por encima del cual los sujetos están protegidos: en este último caso, a menudo el propio nivel protector se denomina correlato de protección \cite{nauta2020}.
+
+La validez y el alcance de los correlatos de protección no son universales, sino que presentan una marcada variabilidad por edad. Las características biológicas intrínsecas de cada etapa de la vida condicionan la interacción entre el sistema inmunitario y el patógeno.
+
+\vspace{\baselineskip}
+\textbf{Inmunosenescencia}
+\vspace{\baselineskip}
+
+La inmunosenescencia se define como los cambios en la respuesta inmune innata y adaptativa asociados con el aumento de la edad. Sus consecuencias clínicas incluyen una mayor susceptibilidad a infecciones, malignidades y autoinmunidad, así como un deterioro en la cicatrización de heridas. Un aspecto crítico de este proceso es que conlleva una menor respuesta a la vacunación y una reducción en la efectividad de diversos fármacos \cite{busse2010}.
+
+Asimismo, el tratamiento en edades avanzadas se complica por la presencia de enfermedades comórbidas y el riesgo incrementado de efectos secundarios ante los medicamentos. A esto se suman posibles deterioros físicos que disminuyen la administración efectiva de los fármacos, comprometiendo el éxito de las intervenciones sanitarias en esta población \cite{busse2010}.
+
+Aunque ELISA es el ensayo de inmunogenicidad estándar, en adultos mayores se prefiere el ensayo de opsonofagocitosis (OPA) como sustituto de protección. La razón principal es que la protección clínica frente a la enfermedad neumocócica depende principalmente de la capacidad funcional de los anticuerpos para opsonizar y facilitar la eliminación del neumococo, mientras que ELISA solo mide concentraciones de IgG sin reflejar su funcionalidad \cite{Westerink2012}.
+
+En este grupo etario no existe un correlato de protección basado en concentraciones de IgG, a diferencia de la población pediátrica. Establecerlo requeriría ensayos de eficacia de una escala impracticable en este grupo etario. El ensayo CAPiTA, uno de los mayores ensayos clínicos de vacunas realizados en adultos, demostró la eficacia de PCV13 frente a neumonía adquirida en la comunidad e IPD por serotipos vacunales, pero no estableció un umbral regulatorio de IgG para adultos, precisamente porque la cantidad de anticuerpos no lo predice de forma fiable \cite{Theilacker2022}.
+
+Incluso, muchos individuos no vacunados presentan niveles elevados de anticuerpos neumocócicos por ELISA, pero experimentan una reducción significativa en la actividad opsonofagocítica frente a diversos serotipos. En consecuencia, concentraciones adecuadas de IgG no garantizan necesariamente protección frente a la enfermedad \cite{Westerink2012}.
+
+De hecho, los PCV más recientes (PCV15, PCV20 y PCV21) han sido autorizados en adultos mediante estudios puente de inmunogenicidad que utilizan la OPA como criterio principal \cite{mcelwee2026overview}. A continuación se explica a detalle en qué consiste esta estrategia.
+
+\section{Puente inmunológico}
+
+Según \cite{cruz2025}, el inmunopuente se define como una metodología de ensayo clínico que infiere la efectividad de un nuevo fármaco a través de una medida inmunológica subrogada de eficacia. Conceptualmente, si un nuevo candidato es capaz de inducir títulos de anticuerpos similares a los de otro producto con eficacia clínica ya demostrada, se infiere que su eficacia es equivalente. 
+
+Este proceso requiere que un ensayo de fase 3 tradicional haya alcanzado previamente un punto final (endpoint) positivo, estableciendo así un punto de referencia robusto para futuros estudios. Al centrarse en evaluaciones inmunológicas que pueden medirse en laboratorio, este enfoque es especialmente apropiado para intervenciones que dependen de la inmunidad humoral.
+
+Una de sus principales ventajas es que necesitan un menor número de participantes y y una duración más corta en comparación con los ensayos clínicos tradicionales, y esta reducción acelera la revisión y aprobación por parte de las autoridades reguladoras.
+
+La metodología estándar consiste en comparar la respuesta inmunológica del grupo de referencia (donde la vacuna ya ha sido aprobada) frente al nuevo grupo de prueba mediante pruebas de hipótesis de no inferioridad o superioridad. Se utilizan como marcadores los niveles de anticuerpos medidos a través de ensayos validados; esto es aceptable incluso cuando el marcador es clínicamente relevante pero aún no se ha establecido científicamente como un correlato de protección definitivo \cite{Fink2021,cruz2025}.
+
+En el ámbito del neumococo, el inmunopuente ha sido fundamental para abordar desafíos como la sustitución de serotipos. A diferencia de los enfoques pediátricos, y debido a la falta de un umbral numérico único universalmente aceptado en adultos, la mayoría de estos estudios comparan los títulos medios geométricos (GMT) entre grupos o evalúan la proporción de sujetos que alcanzan aumentos de $\geq2$ o $\geq4$ veces en los títulos de OPA tras la vacunación. De este modo, la actividad opsonofagocítica se consolida como el criterio principal de inmunogenicidad para el licenciamiento de nuevas formulaciones en población adulta.
+
+\subsection{Antecedentes}
+
+La primera vacuna neumocócica conjugada licenciada para uso pediátrico fue la PCV7, basada en ensayos de eficacia a gran escala \cite{Black2000, Klugman2003, OBrien2003, fletcher2024adult}. Las formulaciones con mayor número de serotipos, como PCV10 y PCV13, se licenciaron comparando las concentraciones de anticuerpos IgG con las de la PCV7 previamente aprobada \cite{fletcher2024adult, vesikari2009immunogenicity}.
+
+Posteriormente, la indicación de la vacuna PCV13 se extendió a la población adulta. Ante la ausencia de un umbral de anticuerpos establecido para este grupo etario, la eficacia contra la enfermedad neumocócica invasiva se infirió mediante puente inmunológico con la vacuna de polisacáridos de 23 valencias (PPV23), utilizando la actividad opsonofagocítica (OPA) como medida subrogada. Más recientemente, las vacunas PCV15, PCV20 y PCV21 se licenciaron en este grupo etario basándose en estudios de inmunopuente que demostraron respuestas OPA no inferiores a PCV13 y PPV23 \cite{fletcher2024adult, mcelwee2026overview, ganaie2025approaches} .
+
+Un cambio de paradigma se observó en el desarrollo de la vacuna 
+V116, una formulación conjugada de 21 valencias diseñada específicamente 
+para adultos. A diferencia del flujo tradicional, en el que la extrapolación 
+de datos ocurría desde la población adulta hacia la pediátrica, el puente 
+inmunológico se realizó en este caso entre adultos jóvenes (18--49 años) 
+y adultos mayores (50--64 años), demostrando respuestas OPA comparables 
+entre ambos grupos para todos los serotipos vacunales \cite{platt2024safety}.
+
+\vspace{\baselineskip}
+\textbf{Otras aplicaciones}
+\vspace{\baselineskip}
+
+Más allá de las vacunas antineumocócicas, el puente inmunológico ha sido determinante en la respuesta a emergencias sanitarias y en el control de diversas enfermedades infecciosas. Durante la pandemia de COVID-19, agencias reguladoras como la FDA extendieron las autorizaciones de emergencia para las vacunas de ARNm en población pediátrica comparando sus datos de inmunogenicidad con los resultados de eficacia obtenidos previamente en adultos jóvenes; este enfoque permitió que, mientras los ensayos clínicos iniciales de ARNm requirieron más de 30,000 participantes, las actualizaciones para variantes como Ómicron se evaluaran en cohortes de apenas 819 pacientes, lo que evidencia una de las principales ventajas de esta metodología: la reducción drástica del tamaño muestral \cite{cruz2025}.
+
+De manera similar, el estudio MEÑIQUE desarrollado en Cuba infirió la eficacia de la vacuna de subunidad proteica Abdala en niños y adolescentes de 3 a 18 años extrapolando los datos de la población adulta, mediante un análisis de no inferioridad que comparó los títulos de anticuerpos neutralizantes de los menores con un grupo de referencia de adultos jóvenes \cite{hernandez2024efficacy}.
+
+Además, esta estrategia se ha implementado en el desarrollo de vacunas contra el dengue, como en los ensayos TAK-003 y CYD-TDV \cite{gilbert2019bridging, lefevre2023bridging}, así como en vacunas contra el virus del papiloma humano e influenza \cite{cruz2025}. Incluso en escenarios que involucran patógenos de alta virulencia como el virus del Ébola, el puente inmunológico ha sido propuesto y utilizado para inferir el efecto protector en humanos a través de la extrapolación de datos inmunológicos obtenidos previamente en modelos de primates no humanos\cite{cruz2025}.
+
+\section{Conceptos estadísticos}
+
+Partiendo de la premisa de que el lector posee conocimientos fundamentales de estadística, esta sección se concentra en formalizar los conceptos y distribuciones esenciales para el avance de este trabajo:
+
+\subsection{Distribuciones y variables aleatorias}
+
+\begin{definition}[Distribución Normal]
+	Se dice que una variable aleatoria $X$ tiene una distribución normal o de Gauss, con parámetros $\mu$ y $\sigma$, denotado $X \sim N(\mu,\sigma^2)$ si $X$ tiene densidad de probabilidad 
+	
+	\begin{equation}
+		\label{eq:normal_distribution}
+		f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}, \quad x \in \mathbb{R},
+	\end{equation}
+	
+	con valor esperado $E[X]=\mu \in \mathbb{R}$ y varianza $V(X)=\sigma^2$, $\sigma>0$. \cite{mann2010}  
+\end{definition}
+
+\begin{definition}[Estandarización]
+	Sea $X$ una variable aleatoria con $E[X]=\mu$ y $V(X)=\sigma^2$. La variable aleatoria $Z$ definida como
+	
+	\begin{equation}
+		\label{eq:estandarizacion}
+		Z = \frac{X - \mu}{\sigma}
+	\end{equation}
+	
+	se denomina variable estandarizada a partir de la variable $X$, y cumple que $E[Z]=0$ y $V(Z)=1$.  \cite{mann2010}
+\end{definition}
+
+Si una variable aleatoria con distribución $N(\mu,\sigma^2)$ se estandariza con la ecuación \ref{eq:estandarizacion} se obtiene una variable con distribución $N(0,1)$, denominada normal estándar.
+
+\begin{definition}[Distribución log-normal]
+	Se dice que una variable aleatoria $X$ tiene distribución log-normal con parámetros $\mu$ y $\sigma^2$, si $Y=\ln(X)$ tiene distribución $N(\mu,\sigma^2)$ . \cite{mann2010, nauta2020}
+\end{definition}
+
+\begin{definition}[Distribución Chi-Cuadrado]  
+	Se dice que una variable aleatoria $X$ tiene distribución chi-cuadrado con parámetro $n$ (grados de libertad), denotada $X \sim \chi^2(n)$, si $X$ tiene densidad de probabilidad
+	
+	\begin{equation}
+		\label{eq:chi}
+		f(x) = \frac{1}{2^{n/2}\Gamma(n/2)} x^{\frac{n}{2}-1} e^{-x/2} I_{(0,\infty)}(x). \tag{1.2}
+	\end{equation}
+	
+	donde $\alpha>0$ y la función gamma $\Gamma(\alpha)=\int_{0}^{\infty} x^{\alpha-1} e^{-x} dx$, con valor esperado $E[X]=n$ y varianza $V(X)=2n$. \cite{mann2010}
+\end{definition}
+
+\subsection{Curvas de distribución acumulada inversa}
+
+La curva de distribución acumulada inversa (RCDC, del inglés \textit{Reverse Cumulative Distribution Curve}) es una herramienta gráfica para visualizar la distribución de valores de inmunogenicidad, especialmente útil para comparaciones descriptivas entre grupos vacunales \cite{nauta2020}.
+
+En este gráfico, el eje $x$ representa los títulos de anticuerpos en escala logarítmica, y el eje $y$ la proporción de sujetos con un título mayor o igual a ese valor. Por definición, la curva comienza en el 100\% y desciende de izquierda a derecha. La mediana corresponde al valor en el eje $x$ asociado al 50\% en el eje $y$.
+
+Al comparar dos vacunas, si una curva está por encima de la otra sin cruzarse, cada percentil de su distribución es mayor, lo que significa que esa vacuna indujo respuestas inmunes más altas. Si las curvas se intersectan, una vacuna indujo tanto más respuestas bajas como más altas. Si el punto de intersección está por encima del 50\%, la situación favorece a la vacuna que mantiene la sección superior en los valores altos; si está por debajo del 50\%, favorece a la otra vacuna.
+
+\subsection{Estimación de parámetros de inmunogenicidad}
+
+Las distribuciones de los valores de inmunogenicidad humoral y celular postvacunales presentan típicamente un sesgo a la derecha. Esta característica justifica el uso de transformaciones logarítmicas, ya que los valores transformados suelen aproximarse satisfactoriamente a una distribución normal \cite{nauta2020}.  
+
+\begin{definition}  
+	Sea $X_1,X_2,\ldots,X_n$ una muestra de $n$ variables aleatorias. Un estadígrafo se define como una función $f:\mathbb{R}^n \to \mathbb{R}$, que asigna un valor real a una muestra de variables aleatorias \cite{nauta2020}, es decir:
+	
+	\begin{equation}
+		\label{eq:estadístico}
+		f(X_1,X_2,\ldots,X_n).
+	\end{equation}
+	
+\end{definition} 
+
+\begin{definition}[Media Geométrica]  
+	Sean $v_1,v_2,\ldots,v_n$ un grupo de $n$ valores de inmunogenicidad i.i.d. La media geométrica se define como \cite{nauta2020}:
+	
+	\begin{equation}
+		\label{eq:gmt_1}
+		GM = \left(\prod_{i=1}^{n} v_i \right)^{1/n}.
+	\end{equation}
+	
+	Una expresión equivalente es:
+	
+	\begin{equation}
+		\label{eq:gmt_2}
+		GM = \exp\left(\frac{1}{n}\sum_{i=1}^{n}\log(v_i)\right).
+	\end{equation}
+	
+\end{definition}
+
+\begin{definition}[Desviación Estándar]  
+	Sea $SD$ la desviación estándar muestral de los valores transformados logarítmicamente, entonces la desviación estándar geométrica se define como \cite{nauta2020}:
+	
+	\begin{equation}
+		\label{eq:gsd_1}
+		GSD = \exp(SD).
+	\end{equation}
+	
+	Si la población de la cual se selecciona la muestra distribuye aproximadamente normal, entonces
+	
+	\begin{equation}
+		\label{eq:with_chisquare}
+		\frac{(n-1)s^2}{\sigma^2} \sim \chi^2(n-1).
+	\end{equation}
+	
+\end{definition}
+
+Como medida de dispersión, la desviación estándar geométrica permite determinar directamente los intervalos de confianza del $100(1-\alpha)\%$ para la media geométrica poblacional \cite{nauta2020}:
+
+\begin{equation}
+	\label{eq:LCL}
+	LCLe_\mu = \frac{\text{GM}}{\text{GSD}^{\frac{t_{n-1; 1-\alpha/2}}{\sqrt{n}}}}
+\end{equation}
+
+\begin{equation}
+	\label{eq:UCL}
+	UCLe_\mu = \text{GM} \cdot \text{GSD}^{\frac{t_{n-1; 1-\alpha/2}}{\sqrt{n}}}
+\end{equation}
+
+donde $t_{n-1; 1-\alpha/2}$ es el percentil $100(1-\alpha/2)$-ésimo de la distribución $t$ de Student con $n - 1$ grados de libertad.
+
+\begin{definition}[Razón de Medias Geométricas]
+	Sean $\text{GM}_1$ y $\text{GM}_0$ las medias geométricas muestrales de la respuesta de inmunogenicidad para el grupo de la vacuna en investigación y el grupo de control, respectivamente. Se define la Razón de Medias Geométricas ($\text{GMR}$, por sus siglas en inglés) como \cite{nauta2020}:
+	
+	\begin{equation}
+		\label{eq:gmr}
+		\text{GMR} = \frac{\text{GM}_1}{\text{GM}_0}
+	\end{equation}
+	
+	Si $\text{AM}_1$ y $\text{AM}_0$ denotan las medias aritméticas de los valores transformados logarítmicamente de ambos grupos, se cumple la siguiente igualdad:
+	
+	\begin{equation}
+		\label{eq:gmr1}
+		\text{GMR} = \exp(\text{AM}_1 - \text{AM}_0)
+	\end{equation}
+	
+\end{definition}
+
+\vspace{\baselineskip}
+\textbf{Aproximación de Welch}
+\vspace{\baselineskip}
+
+Para comparar los títulos en escala logarítmica entre el grupo de referencia (niños) y el grupo de estudio (adultos) sin suponer igualdad de varianzas poblacionales, se emplea la aproximación de Welch--Satterthwaite \cite{Welch1947, Satterthwaite1946, Fuglsang2014}. 
+
+Sean $\bar{X}_i$, $S_i^2$ y $n_i$ la media muestral, varianza muestral y tamaño de muestra del grupo $i \in \{1,2\}$. El estimador de la diferencia de medias en escala logarítmica es $\hat{\delta} = \bar{X}_2 - \bar{X}_1$, con error estándar
+
+\begin{equation}\label{eq:se-welch}
+	\widehat{\mathrm{SE}}(\hat{\delta}) =
+	\sqrt{\frac{S_1^2}{n_1} + \frac{S_2^2}{n_2}}.
+\end{equation}
+
+El estadístico $t_W = \hat{\delta} / \widehat{\mathrm{SE}}(\hat{\delta})$ sigue aproximadamente una distribución $t$ de Student con $\hat{\nu}$ grados de libertad efectivos, dados por
+
+\begin{equation}\label{eq:df-welch}
+	\hat{\nu} = \frac{\left(S_1^2/n_1 + S_2^2/n_2\right)^2}
+	{\dfrac{(S_1^2/n_1)^2}{n_1-1} + \dfrac{(S_2^2/n_2)^2}{n_2-1}},
+\end{equation}
+
+\noindent valor que en general es fraccionario y varía según el serotipo analizado. El intervalo de confianza al $95\,\%$ para $\delta$ es
+
+\begin{equation}\label{eq:ic-welch}
+	\hat{\delta} \;\pm\; t_{\hat{\nu},\,0.975} \cdot
+	\widehat{\mathrm{SE}}(\hat{\delta}),
+\end{equation}
+
+\noindent y retrotransformando se obtiene el intervalo para la GMR:
+
+\begin{equation}\label{eq:ic-gmr-sub}
+	\mathrm{GMR} = e^{\hat{\delta}}, \qquad
+	\mathrm{IC}_{95\%} = \left(e^{\hat{\delta} - t_{\hat{\nu},0.975}\,
+		\widehat{\mathrm{SE}}},\;
+	e^{\hat{\delta} + t_{\hat{\nu},0.975}\,\widehat{\mathrm{SE}}}\right).
+\end{equation}
+
+Este procedimiento garantiza la validez nominal del intervalo de confianza ante heterocedasticidad entre grupos, sin inflar la tasa de error Tipo~I \cite{Fuglsang2014}.
+
+\subsection{Censura en datos de ensayos clínicos}
+
+Los datos censurados representan una característica distintiva del análisis de supervivencia y se definen como observaciones incompletas donde el evento de interés no se observa para algunos sujetos antes de que finalice el estudio \cite{turkson}.
+
+En el contexto de los títulos de anticuerpos, la censura no es simplemente una pérdida de información, sino una consecuencia directa de las limitaciones técnicas de los ensayos inmunológicos y ocurre principalmente cuando la concentración de anticuerpos es demasiado baja para ser detectada o demasiado alta para ser medida con precisión dentro del rango del equipo \cite{tran2021measuring}.
+
+En los laboratorios, la medición de anticuerpos se rige por dos umbrales críticos que definen la presencia de datos censurados:
+\begin{itemize}
+	\item Límite de Detección (LOD): Es la concentración más pequeña de un analito que permite deducir su presencia con certeza aceptable.
+	\item Límite de Cuantificación (LOQ): Es el contenido más bajo que puede medirse con un grado específico de precisión y exactitud.
+\end{itemize}
+
+Cualquier nivel de anticuerpo por debajo de estos umbrales preespecificados se registra simplemente como menor al límite, lo que genera observaciones censuradas.
+
+\vspace{\baselineskip}
+\textbf{Tipos de censura en títulos de anticuerpos}
+\vspace{\baselineskip}
+
+La censura de los datos puede producirse por la izquierda, por la derecha o por intervalos \cite{turkson, tran2021measuring}.
+\begin{itemize}
+	\item \textbf{Censura por la Derecha:} Se presenta en casos de respuestas inmunes extremadamente altas que superan el límite superior de cuantificación del ensayo. Se sabe que el título es mayor a un valor \enquote{X}, pero el equipo no puede precisar cuánto más.
+	
+	\item \textbf{Censura por Intervalos:} Ocurre cuando se determina que el valor real de los anticuerpos se encuentra confinado dentro de un rango específico, pero sin conocer el punto exacto. En serología, esto se manifiesta de forma típica entre dos pasos sucesivos de una serie de diluciones, o bien en estudios longitudinales cuando el cambio en los niveles ocurre entre dos visitas de seguimiento consecutivas.
+	
+	\item \textbf{Censura por la Izquierda:} Es el tipo de censura más común en serología. Ocurre cuando los niveles de anticuerpos son tan bajos que caen por debajo del LOD/LOQ; es decir, el ensayo no puede proporcionar una medición válida por ser la concentración demasiado baja; solo se sabe que el valor real está entre cero y el límite de detección. Matemáticamente, la censura por la izquierda se considera un caso especial de la censura por la derecha con el eje del tiempo invertido.
+\end{itemize}
+
+La literatura describe diversos métodos para gestionar los datos censurados y mitigar el sesgo en las estimaciones. El \textbf{Análisis de Casos Completos (CCA)} es una de las soluciones más simples, consiste en excluir las observaciones censuradas y analizar únicamente los datos observados por completo. Sin embargo, este enfoque reduce el tamaño de la muestra, disminuye la potencia estadística y genera sesgos severos en la inferencia al omitir a los individuos con las respuestas inmunitarias más bajas \cite{turkson,tran2021measuring}.
+
+Para evitar la pérdida de muestra, los Métodos de \textbf{Imputación o Sustitución Simple} reemplazan los valores indetectables por constantes fijas como cero, el límite de detección (LOD) o su mitad (LOD/2). Aunque este método permite mantener la muestra original y utilizar software convencional, carece de base teórica sólida. Al asignar un mismo valor a múltiples observaciones, se reduce artificialmente la variabilidad de los datos y se subestima la varianza, lo que altera los errores estándar e incrementa el riesgo de incurrir en errores de Tipo I \cite{turkson, tran2021measuring}.
+
+Otra alternativa es la \textbf{Dicotomización de los Datos}, que transforma los títulos continuos en variables binarias (por ejemplo, \enquote{detectable}  frente a \enquote{no detectable}. Este procedimiento facilita el uso de regresiones logísticas o tablas de contingencia, siendo útil si el nivel de censura supera el noventa por ciento. No obstante, provoca una gran pérdida de precisión y potencia estadística, ya que ignora la naturaleza continua de la medición y no distingue la magnitud de la respuesta inmune entre los individuos ubicados por debajo del umbral \cite{turkson}.
+
+Cuando la distribución de la respuesta es desconocida o compleja, se recurre a los \textbf{Enfoques No Paramétricos} como el método de Kaplan‐Meier. Su principal ventaja es que no exigen especificar una forma funcional o distribución de probabilidad para los datos. A pesar de esto, no permiten estimar o predecir valores numéricos exactos, limitándose a identificar asociaciones entre variables. Además, poseen menor potencia estadística que los métodos paramétricos cuando los supuestos de estos últimos sí se cumplen \cite{turkson, tran2021measuring}.
+
+Finalmente, la \textbf{Estimación por Máxima Verosimilitud (MLE)} representa el enfoque más robusto y fundamentado. Este modelo matemático procesa simultáneamente tanto los valores observados como el mecanismo estadístico de la censura. Su virtud radica en que utiliza toda la información disponible sin eliminar registros ni sustituir datos de forma arbitraria, proporcionando estimadores consistentes y asintóticamente normales \cite{turkson,tran2021measuring}.
+
+En presencia de censura, la verosimilitud combina dos componentes principales:
+\begin{itemize}
+	\item Para las observaciones no censuradas, la contribución a la verosimilitud es el valor de la función de densidad de probabilidad ($f(x)$) en ese punto exacto.
+	\item Para las observaciones censuradas por la izquierda, dado que solo se sabe que el valor real es menor o igual al límite ($L$), la contribución es la función de distribución acumulativa ($F(L)$) evaluada en dicho umbral.
+\end{itemize}
+
+En la práctica, se suele trabajar con el logaritmo de la verosimilitud para facilitar el cálculo. Si los datos se transforman a escala logarítmica (asumiendo normalidad), el modelo se convierte en una Regresión Tobit.
+
+\subsection{Modelo Tobit}\label{sec:Modelo_Tobit}
+
+El modelo Tobit, propuesto por James Tobin en 1958, es un modelo de regresión diseñado para variables dependientes cuyo rango está limitado o restringido, lo que lo hace ideal para el análisis de títulos de anticuerpos sujetos a un límite de detección (LOD) \cite{tobit_survey,tobit_original}.
+
+\begin{definition}[Modelo Tobit con Censura por la Izquierda]
+	
+	Se fundamenta en la existencia de una variable latente no observable, denotada como $y_i^*$, que representa el valor real de la variable de interés (en este caso, el logaritmo de la concentración de anticuerpos). Esta variable sigue una distribución normal y se define mediante una ecuación de regresión lineal\cite{tobit_survey,tobit_original}:
+	
+	\begin{equation}
+		y_i^* = X_i' \beta + \epsilon_i
+		\label{eq:tobit_latente}
+	\end{equation}
+	
+	Donde:
+	\begin{itemize}
+		\item $X_i$ es un vector de variables explicativas.
+		\item $\beta$ es el vector de coeficientes a estimar.
+		\item $\epsilon_i$ es el término de error, asumiendo que son independientes e idénticamente distribuidos como $N(0, \sigma^2)$.
+	\end{itemize}
+	
+	En un escenario de censura por la izquierda con un límite de detección $\rho$, la relación entre la variable latente y la variable observada ($y_i$) es:
+	
+	\begin{itemize}
+		\item $y_i = y_i^*$ si $y_i^* > \rho$ (el valor es detectable).
+		\item $y_i = \rho$ si $y_i^* \le \rho$ (el valor está censurado).
+	\end{itemize}
+\end{definition}
+
+\subsection{Función de Log-Verosimilitud}
+
+Para estimar los parámetros $\beta$ y $\sigma^2$, el modelo Tobit utiliza la Estimación por Máxima Verosimilitud (MLE). La función de verosimilitud debe integrar tanto la densidad de los datos observados como la probabilidad de que los datos estén por debajo del límite.
+
+Para un conjunto de datos con un límite $\rho$, la log-verosimilitud ($l$) se expresa como \cite{tobit_survey,tobit_original}:
+
+\begin{equation}
+	l(\beta, \sigma^2) = \sum_{y_i > \rho} \log \left( \frac{1}{\sigma} \phi \left( \frac{y_i - X_i' \beta}{\sigma} \right) \right) + \sum_{y_i \le \rho} \log \left( \Phi \left( \frac{\rho - X_i' \beta}{\sigma} \right) \right)
+	\label{eq:tobit_loglik}
+\end{equation}
+
+Donde:
+\begin{itemize}
+	\item $\phi(\cdot)$ es la función de densidad de probabilidad (PDF) de la normal estándar.
+	\item $\Phi(\cdot)$ es la función de distribución acumulativa (CDF) de la normal estándar.
+	\item La primera sumatoria corresponde a las observaciones no censuradas (valores exactos).
+	\item La segunda sumatoria representa la probabilidad de que una observación sea menor o igual al límite de detección $\rho$.
+\end{itemize}
+
+En este caso, la media de la variable latente (media poblacional) representa el valor esperado de la variable en su escala de análisis si no hubiera limitaciones técnicas o censura en el ensayo \cite{tobit_survey}. Se calcula simplemente como:
+
+\begin{equation}
+	E(y_i^*) = X_i' \beta
+	\label{eq:tobit_media}
+\end{equation}
+
+Bajo la teoría asintótica de máxima verosimilitud, los intervalos de confianza para dichos parámetros se construyen de forma general a partir de la aproximación de Wald \cite{wald1943, casella2002statistical}, calculándose como:
+
+\begin{equation}
+	\hat{\beta}_j \pm z_{1-\alpha/2} \cdot SE(\hat{\beta}_j)
+	\label{eq:tobit_ic}
+\end{equation}
+
+Donde $z_{1-\alpha/2}$ es el valor crítico de la distribución normal estándar para un nivel de significación $\alpha$, y el error estándar $SE(\hat{\beta}_j)$ se obtiene de la raíz cuadrada de los elementos de la diagonal de la matriz de información de Fisher observada (el negativo del inverso de la matriz Hessiana de la log-verosimilitud).
+
+\subsection{No inferioridad}
+
+En investigación clínica, un ensayo de no inferioridad busca demostrar que un tratamiento no es inferior a otro en más de una pequeña cantidad $M$, el margen de no inferioridad \cite{nauta2020, Uranga2006}.  
+
+\begin{definition}[No inferioridad]  
+	Sea $\Delta = \mu_{ref} - \mu_{test}$. El contraste de hipótesis es:
+	
+	\[
+	H_0 : \Delta \geq M \tag{1.11}
+	\]
+	
+	\[
+	H_1 : \Delta < M \tag{1.12}
+	\]
+\end{definition}
+
+Si la hipótesis nula se contrasta al nivel de significación $\alpha/2$, este procedimiento conduce a la misma conclusión que comprobar que el límite superior del intervalo de confianza unilateral $100(1 - \alpha/2)\%$ para $\Delta$ cae a la izquierda de M.
