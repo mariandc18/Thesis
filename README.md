@@ -1,4 +1,4 @@
-# Predicción de Eficacia del Candidato Vacunal Quimi-Vio® 11 en Adultos
+# 💉 Predicción de Eficacia del Candidato Vacunal Quimi-Vio® 11 en Adultos
 
 Trabajo de diploma en opción al título de **Licenciada en Ciencia de Datos**, Facultad de Matemática y Computación, Universidad de La Habana, 2026.
 
@@ -56,8 +56,8 @@ Para má detalles ver el repositorio de implementación:
 ## 👩‍💻 Autora
 Marian Aguilar Tavier
 
-## Tutora
+### Tutora
 - MsC. Yanet García Serrano
 
-## Asesora
+### Asesora
 - DraC. Dagmar García Rivera
