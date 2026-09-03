@@ -28,6 +28,7 @@ Thesis/
 │   ├── BackMatter/        # Conclusiones, recomendaciones, bibliografía, anexos
 │   └── Graphics/          # Figuras e imágenes
 ├── Thesis.tex             # Documento principal
+├── Thesis.pdf             # Documento final compilado
 ├── Bibliography.bib       # Referencias bibliográficas
 ├── uhthesis.cls           # Clase LaTeX de la UH
 ```
@@ -46,6 +47,11 @@ pdflatex Thesis.tex
 ```
 
 ---
+
+## Implementación
+
+Para má detalles ver el repositorio de implementación:
+[Pneumococcal-Immunobridging](https://github.com/mariandc18/Pneumococcal-Immunobridging)
 
 ## 👩‍💻 Autora
 Marian Aguilar Tavier
