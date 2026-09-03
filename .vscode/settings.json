@@ -8,7 +8,7 @@
         "**/*.log": true,
         "**/*.lot": true,
         "**/*.out": true,
-        "**/*.pdf": true,
+        "**/*.pdf": false,
         "**/!Graphics/uhlogo.pdf": true,
         "**/*.backup": true,
         "**/*.toc": true,
