@@ -56,8 +56,5 @@ Para má detalles ver el repositorio de implementación:
 ## 👩‍💻 Autora
 Marian Aguilar Tavier
 
-**Tutora**
-- MsC. Yanet García Serrano
-
-**Asesora**
-- DraC. Dagmar García Rivera
+**Tutora** : MsC. Yanet García Serrano
+**Asesora** : DraC. Dagmar García Rivera
